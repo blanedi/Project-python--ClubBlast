@@ -1,7 +1,20 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+
 """
-Created on Sun Dec 11 15:41:56 2022
+####** Project : ClubBlast Hertie engine** ####
+
+Objective:
+
+Hertie has an active social and academic community, with dozens of student clubs and regular compelling events. 
+Currently, events are communicated to the student body through email. 
+This requires students to read through long lists of information in multiple locations to identify events they would enjoy.
+It can be difficult for busy students (and faculty) to keep track of! Our project will allow Hertie community members to identify upcoming club events of significance by entering their interests. 
+It will return suggestions of forthcoming club events based on user input, with additional information about the event so the user can make an informed decision on how best to spend their time.
+
+Team 
+Christopher Borges
+Cintya Huaire
+Anusha Rajan
+Frieder König
 
 """
 
@@ -16,12 +29,11 @@ from IPython.display import display
 
 ######uploading the database########
 
-df = pd.read_excel("HertieClubBlast - Final.xlsx")
-
-df = df.dropna()
 
 ###Data Prep Functions###
+df = pd.read_excel("https://github.com/blanedi/Project-python--ClubBlast/blob/main/HertieClubBlast%20-%20Final.xlsx?raw=true")
 
+df = df.dropna()
 #DateFrameColumnRemover
 #Author: Chris Borges
 #Description: Removes excess columns from dataframe
@@ -143,9 +155,7 @@ def StringCleaning(prestrip):
 #creates new "dates" column based on datefinder analysis, cleans "dates" column for search
 #Inputs: Name of file with data
 #Output: None
-#FileName = ("HertieClubBlast - Final.xlsx")
-#df = pd.read_excel(io.BytesIO(uploaded_file[FileName]))
-#df = df.dropna() #removes rows will null values
+
 ColumnRemoveList = ['Timestamp', 'Email Address']
 DataFrameColumnRemover(ColumnRemoveList)
 df['Dates'] = FindDates(df,"Announcement") #Create new column "dates" based on analysis of words in specified column
@@ -159,7 +169,7 @@ for i in range(1,len(df.index)+1):
 #########Generating variable "theme"#################
 #############@author: CINTYAHUAIRE####################
 #######################################################
-df['theme'] = df['Modified announcement'].str.findall('finance|human right|digitalization|programm|cybersecurity|thesis|sustainable|film|movie|hike|boulder|wine', flags=re.IGNORECASE).str.join(",")
+df['theme'] = df['Announcement'].str.findall('finance|human right|digitalization|programm|cybersecurity|thesis|sustainable|film|movie|hike|boulder|wine', flags=re.IGNORECASE).str.join(",")
 
 #####standarizing the themes #####
 #academic events= human rights, thesis
@@ -185,7 +195,7 @@ df['theme_clean'] = np.select(conditions, values)
 #########Generating  variable "type of event" ##########################
 ########to now whetever and event is onsite or online################
 #######################################################################
-df['type of event'] = df['Modified announcement'].str.findall('campus|online|room|forum', flags=re.IGNORECASE).str.join(",")
+df['type of event'] = df['Announcement'].str.findall('campus|online|room|forum', flags=re.IGNORECASE).str.join(",")
 #standarizing it so room , forum, campus it should be an event on campus
 #online an online event
 #outside all the events of leisure activities
@@ -210,7 +220,7 @@ df['type_event_clean'] = np.select(conditions, values)
 #######################################################################
 
 
-df["nro_room"]=df['Modified announcement'].str.extract(r"(room \d.\d\d)",re.IGNORECASE, expand=True)
+df["nro_room"]=df['Announcement'].str.extract(r"(room \d.\d\d)",re.IGNORECASE, expand=True)
 
 
 df["nro_room"]=np.where(df['type of event'].str.count("Forum") >=1,"Hertie Forum", df.nro_room)
