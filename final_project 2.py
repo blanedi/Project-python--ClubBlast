@@ -3,7 +3,6 @@
 """
 Created on Sun Dec 11 15:41:56 2022
 
-@author: CINTYAHUAIRE1
 """
 
 #importing the libraries to be use#####
