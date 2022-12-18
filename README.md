@@ -22,7 +22,7 @@ Download data from 'HertieClubBlast - Final.xlsx'
 
 
 ## Development Team 
-Christopher Borges
-Cintya Huaire
-Anusha Rajan
-Frieder König
+- Christopher Borges
+- Cintya Huaire
+- Anusha Rajan
+- Frieder König
