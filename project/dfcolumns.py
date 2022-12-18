@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-This module removes excess columns from the dataframe
+This module removes excess columns from the dataframe.
 
 Module Exports:
 
