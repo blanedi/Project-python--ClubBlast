@@ -1,12 +1,17 @@
 ###SEARCHING FUNCTIONS###
 
-#SearchStart
-#Author: Chris Borges
-#Description: Prompts user to select their search criteria - options are club, date, theme, and location
-#Selection determines which search function to call
-#Inputs: None
-#Outputs: None
+
 def SearchStart():
+    """Prompts user to select their search criteria - options are club, date, theme, and location
+    Selection determines which search function to call
+
+    Args: 
+        NA
+      
+    Returns:
+        NA
+  
+  """
   print ("Welcome to the Hertie School Club Event search tool!")
   path = input("What criteria would you like to search by? Option are club, date, theme, and location ")
   x = 0
