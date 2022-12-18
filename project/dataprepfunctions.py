@@ -1,22 +1,39 @@
 ###Data Prep Functions###
-df = pd.read_excel("https://github.com/blanedi/Project-python--ClubBlast/blob/main/HertieClubBlast%20-%20Final.xlsx?raw=true")
+"""
+This module contains the dataprep functions for the Hertie ClubBlast Search Engine. 
 
-df = df.dropna()
-#DateFrameColumnRemover
-#Author: Chris Borges
-#Description: Removes excess columns from dataframe
-#Inputs: Title of columns to remove from dataframe
-#Output: None
+Exports:
+- 
+
+"""
+
+
+
 def DataFrameColumnRemover(ColumnTitle):
+  """Removes specified columns from dataframe by title
+
+    Args: 
+        ColumnTitle (str): title of column to be removed from dataframe.
+      
+    Returns:
+        NA
+  
+  """
   for i in ColumnTitle:
     df.drop(i,axis=1, inplace=True)
 
-#FindDates
-#Author: Chris Borges
-#Description: Returns dates in datetime format for each cell in specified column
-#Inputs: dataframe, Name of column
-#Output: Dates in datetime format
+    
 def FindDates(df,ColumnTitle):
+  """Returns dates in datetime format for each cell in specified column
+
+    Args: 
+        df (dataframe): dataframe with column to be processed
+        ColumnTitle (str): title of column to be processed
+      
+    Returns:
+        dates (list): list of dates from each cell in column
+  
+  """
   datewords = []
   x = 1
   while x < len(df. index) + 1: #for each cell in column
@@ -25,14 +42,20 @@ def FindDates(df,ColumnTitle):
     Var3 = WordFinder(Var2, extractwords) #identify the time-related words in each string
     datewords.append(Var3) #store those words in list as a string
     x += 1
-  return DateID(datewords) #run string through datefinder
+  dates = DateID(datewords) #run string through datefinder
+  return dates
 
-#ASCIISwap
-#Author: Chris Borges
-#Description: Preps strings for datefinder by removing specified ASCII characters
-#Inputs: String 
-#Output: String with specified ASCII characters removed
+
 def ASCIISwap(prestrip):
+  """Preps strings for datefinder by removing specified ASCII characters
+
+    Args: 
+        prestrip (str): string to be processed
+      
+    Returns:
+        poststrip (str): string with specified characters removed
+  
+  """
   asciiDict = {
     33: 32,
     41: 32,
@@ -43,12 +66,17 @@ def ASCIISwap(prestrip):
   return poststrip
 
 
-#WordFinder
-#Author: Chris Borges
-#Description: Function to return the specified date and time words from the string
-#Inputs: String to be analyzed; List of words to keep in the string
-#Output: String with only the specified words included
 def WordFinder(prestrip, words):
+  """Return the specified date and time words from a string
+
+    Args: 
+        prestrip (str): string to be processed
+        words (list): list of words to keep in the string
+      
+    Returns:
+        poststrip (str): string with only the specified words included
+  
+  """
   list1 = []
   list2 = []
   list1 = prestrip.split()
@@ -59,9 +87,7 @@ def WordFinder(prestrip, words):
   return (poststrip)
 
 
-#Extractwords
-#Author: Chris Borges
-#Description: List of Time-related words to extract from TimeFinder function
+'''List of Time-related words to extract from TimeFinder function'''
 extractwords = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',
     'Jan', 'Feb', 'Mar', 'Apr', 'Aug', 'Sep', 'Oct', 'Nov',' Dec',
@@ -75,30 +101,41 @@ extractwords = [
     'pm', 'am', "PM", "AM", "2022", "2023"
 ]
 
-#DateID
-#Author: Chris Borges
-#Description: Runs datefinder to identify dates from each string in a list
-#Inputs: List of strings to search for dates
-#Output: List of dates identified by datefinder 
-def DateID(list3):
+
+def DateID(prerun):
+  """Runs datefinder to identify dates from each string in a list
+
+    Args: 
+        prerun (list): list of strings to search for dates
+      
+    Returns:
+        postrun (list): list of dates identified by datefinder in datetime.date format
+  
+  """
   dates = []
+  postrun = []
   y = 0
-  for i in list3: #for each string in list
+  for i in prerun: #for each string in list
     matches = datefinder.find_dates(i) #run date-finder
     for match in matches: #for each identified date
-      match = match.date() #removes the time
+      match = match.date() #remove the time
       dates.append(match) #add to new list
-    list3[y] = dates #update list with datefinder identified dates - note: moving values between lists to handle scenarios where multiple dates are identified
+    postrun.append(dates) #update list with datefinder identified dates - note: moving values between lists to handle scenarios where multiple dates are identified
     dates = []
     y += 1
-  return (list3)
+  return (postrun)
 
-#StringCleaning
-#Author: Chris Borges
-#Description: Removes identified special characters using ASCII keys - run after using datefinder to prep "dates" column for search
-#Inputs: String
-#Output: String with specified ASCII characters removed
+
 def StringCleaning(prestrip):
+  """Removes identified special characters using ASCII characters - run after using datefinder to prep "dates" column for search
+
+    Args: 
+        prestrip (list): string to be processed
+      
+    Returns:
+        poststrip (list): spring with specified characters removed
+  
+  """
   stringcleaner = {
     40: 32,
     41: 32,
@@ -123,6 +160,10 @@ def StringCleaning(prestrip):
 #creates new "dates" column based on datefinder analysis, cleans "dates" column for search
 #Inputs: Name of file with data
 #Output: None
+
+df = pd.read_excel("https://github.com/blanedi/Project-python--ClubBlast/blob/main/HertieClubBlast%20-%20Final.xlsx?raw=true")
+
+df = df.dropna()
 
 ColumnRemoveList = ['Timestamp', 'Email Address']
 DataFrameColumnRemover(ColumnRemoveList)
