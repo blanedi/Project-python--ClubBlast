@@ -2,6 +2,18 @@
 # -*- coding: utf-8 -*-
 
 
+"""
+This module contains functions used to process strings to before and after using datefinder
+
+
+Functions exported from module:
+
+ascii_swap()
+word_finder()
+string_cleaning()
+
+"""
+
 def ascii_swap(prestrip):
   """
   This function is used to pre process the strings by removing specified ASCII characters
@@ -47,6 +59,7 @@ def word_finder(prestrip, words):
       list2.append(i)
   poststrip = " ".join(list2)
   return (poststrip)
+
 
 
 def string_cleaning(prestrip):
