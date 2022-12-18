@@ -25,7 +25,7 @@ Club data is automatically pulled from github when running the code.
 Raw data lives in "HertieClubBlast - Final.xlsx"
 
 ## Run the Code
-The main file, which will run the code, is called "final_project 2". This project will call information from the other files.
+To run the code, open the file “main_project.py” in the project folder. The other files in that folder are modules containing functions which are used in the main project file.
 
 ## Development Team 
 - Christopher Borges
