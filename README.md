@@ -22,7 +22,8 @@ Libraries and Packages:
 - from IPython.display import display
 
 ## Data Prep
-Club data is automatically pulled from github when running the code
+Club data is automatically pulled from github when running the code. 
+Raw data lives in "HertieClubBlast - Final.xlsx"
 
 
 ## Development Team 
