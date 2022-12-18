@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-This module contains the search functions that searches through user input by date, club, theme or location
+This module contains the search functions that searches through user input by date, club, theme or location.
 
 Module Exports:
 
