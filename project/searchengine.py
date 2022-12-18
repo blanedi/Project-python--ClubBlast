@@ -94,7 +94,7 @@ def search_by_club(df):
   pd.set_option('display.max_colwidth', None)
   title = """What is the name of the club you are looking for? Here is a list of clubs, please type in the names as they appear here: \n Work Economy and Social Policy \n Hertie School Hikers \n Hertie School Art Club \n Hertie School Hikers \n Hertie School Art Club \n Hertie Latinoamerica  \n Hertie Sustainability Club \n The Hertie Climbing Group \n Hertie School Security Club \n Hertie Wine Club  \n Hertie Coding Club  \n Kino Club  \n Cinema Politca  \n Centre for Fundamental Rights \n Hertie School City Lab  \n futurEU  \n Hertie Women in Public Policy \n SHIELD \n"""
   club = str(input(title))
-#sorting names of clubs into dataframes because they are logged into the sheet differently by students 
+#we sort names of clubs into dataframes because they are logged into the sheet differently by students 
 #this will generate dataframes for each club, sorted chronologically, doing this will help display the newest event entered by the club most accurately
   WESP =  df[df["Club"].isin([ "WESP Club", "WESP club", "Work Economy and Social Policy", "WESP", "Work, Economy, & Social Policy Club (WESP)"])]
   Hertie_School_Hikers = df[df["Club"].isin(["Hertie School Hikers"])]
