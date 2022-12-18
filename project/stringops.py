@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+This module contains functions used before and after datefinder to achieve best results
+
+Module Exports:
+
+ascii_swap()
+word_finder()
+string_cleaning()
+"""
+
 
 def ascii_swap(prestrip):
   """
