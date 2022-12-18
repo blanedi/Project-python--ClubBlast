@@ -1,4 +1,13 @@
 ###SEARCHING FUNCTIONS###
+"""
+
+This module contains the searching functions for the Hertie Clubblast Search Engine. 
+
+Exports:
+- SearchStart()
+
+
+"""
 
 
 def SearchStart():
