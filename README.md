@@ -22,7 +22,7 @@ Libraries and Packages:
 - from IPython.display import display
 
 ## Data Prep
-The club data is automatically pulled from github when running the code, so it is not necessary to download the data manually.  
+The club data is automatically pulled from github when running the code, so it is not necessary to download the data manually. 
 
 
 ## Development Team 
