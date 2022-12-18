@@ -31,7 +31,7 @@ def find_dates(df, column_names):
 
   Returns
   -------
-  dates in datetime format for each cell in specified column
+  dates : list of dates in datetime format for each cell in specified column
 
   """
   datewords = []
@@ -42,7 +42,8 @@ def find_dates(df, column_names):
     Var3 = word_finder(Var2, time_keywords) #identify the time-related words in each string
     datewords.append(Var3) #store those words in list as a string
     x += 1
-  return date_id(datewords) #run string through datefinder
+  dates = DateID(datewords) #run string through datefinder
+  return dates
 
 
 def date_id(strings):
@@ -55,7 +56,7 @@ def date_id(strings):
 
   Returns
   -------
-  strings : List of dates identified by datefinder 
+  strings : list of dates identified by datefinder 
 
   """
   dates = []
