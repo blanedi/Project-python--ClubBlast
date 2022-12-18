@@ -16,6 +16,7 @@ Libraries and Packages:
 - import re
 - import numpy as np
 - from datetime import datetime
+- from IPython.display import display
 
 ## Data Prep
 Download data from 'HertieClubBlast - Final.xlsx'
