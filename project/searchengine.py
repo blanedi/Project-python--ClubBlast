@@ -7,7 +7,6 @@ This module contains the search functions that searches through user input by da
 Module Exports:
 
 start_search()
-date_id()
 search_by_date()
 search_by_club()
 search_by_theme()
