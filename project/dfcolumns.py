@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 
 
+"""
+This module removes excess columns for the dataframe
+
+Module Exports:
+
+remove_columns
+
+"""
 
 def remove_columns(df, column_names):
     """
