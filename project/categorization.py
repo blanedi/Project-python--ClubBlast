@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-This module selects and cleans the relevant data to search for the dates, themes, event types or rooms
+This module selects and cleans the relevant data to search for the dates, themes, event types or rooms.
 
 Module Exports:
 
