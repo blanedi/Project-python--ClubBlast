@@ -24,6 +24,8 @@ Libraries and Packages:
 Club data is automatically pulled from github when running the code. 
 Raw data lives in "HertieClubBlast - Final.xlsx"
 
+## Run the Code
+The main file, which will run the code, is called "final_project 2". This project will call information from the other files.
 
 ## Development Team 
 - Christopher Borges
