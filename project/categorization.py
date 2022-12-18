@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+This module selects and cleans the relevant data to search for the dates, themes, event types or rooms
+
+Module Exports:
+
+process_dates()
+process_themes()
+process_event_types
+process_rooms()
+
+"""
+
+
 import re
 import numpy as np
 from dateops import find_dates
@@ -27,7 +40,7 @@ def process_dates(df):
 
 def process_themes(df):
   """
-  This function select and clean the data to search for themes within a column of strings
+  This function selects and cleans the data to search for themes within a column of strings
 
   Parameters
   ----------
@@ -63,7 +76,7 @@ def process_themes(df):
     
 def process_event_types(df):
   """
-  This function select and clean the data to search for events within a column of strings
+  This function selects and cleans the data to search for events within a column of strings
 
   Parameters
   ----------
@@ -95,7 +108,7 @@ def process_event_types(df):
     
 def process_rooms(df):
   """
-  This function select and clean the data to search for the number of room that the event is happening  within a column of strings
+  This function selects and cleans the data to search for the number of room that the event is happening within a column of strings
 
   Parameters
   ----------
