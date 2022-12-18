@@ -9,17 +9,16 @@ See for 'Project proposal Intro Python.docx' for full project description
 
 ## Installation
 
-All project code lives in the "project" folder. Many of the functions and packages used by the project exist in this folder. 
-However, additional packages listed below must be installed as well.
+All project code lives in the "project" folder. Packages listed below must be installed.
 
 Libraries and Packages:
-- import pandas as pd
-- import io
-- import datefinder
-- import re
-- import numpy as np
-- from datetime import datetime
-- from IPython.display import display
+- pandas
+- io
+- datefinder
+- re
+- numpy
+- datetime
+- IPython.display
 
 ## Data Prep
 Club data is automatically pulled from github when running the code. 
