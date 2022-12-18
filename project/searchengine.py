@@ -113,6 +113,7 @@ def search_by_club(df):
   WIPP=df[df["Club"].isin(["Hertie Women in Public Policy (WIPP)"])]
   SHIELD=df[df["Club"].isin(["SHIELD"])]
 #elseif statements for generating relevant output to the input
+#we used display() instead of print() because the output it generates is less unwieldy for the reader
   if club == "Work Economy and Social Policy":
     display(WESP.iloc[[-1],[1,2]])
   elif club == "SHIELD":
@@ -165,7 +166,7 @@ def search_by_theme(df):
   pd.set_option('display.max_colwidth', None)
   title = "What is the type of event you are looking for? You can choose of the following themes: \n Academic \n Leisure \n Tech \n Other \n"
   theme = str(input(title))
-#sort events into their respective dataframes
+#sort events into their respective dataframes 
   if theme == "Academic":
     academic=df[df["theme_clean"].isin(["academics"])]
     display(academic.iloc[:, 1:3])
