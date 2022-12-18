@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-This module contains functions used before and after datefinder to achieve best results
+This module contains functions used before and after datefinder to achieve best results.
 
 Module Exports:
 
