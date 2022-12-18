@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-This module contains a list of date-related words to extract from strings for processing and functions to identify dates
+This module contains a list of date-related words to extract from strings for processing and functions to identify dates.
 
 Module Exports:
 
