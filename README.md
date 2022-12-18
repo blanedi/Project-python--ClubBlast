@@ -9,6 +9,9 @@ See for 'Project proposal Intro Python.docx' for full project description
 
 ## Installation
 
+All project code lives in the "project" folder. Many of the functions and packages used by the project exist in this folder. 
+However, additional packages listed below must be installed as well.
+
 Libraries and Packages:
 - import pandas as pd
 - import io
