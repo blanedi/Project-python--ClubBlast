@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+This module contains the search functions that searches through user input by date, club, theme or location
+
+Module Exports:
+
+start_search()
+date_id()
+search_by_date()
+search_by_club()
+search_by_theme()
+search_by_location()
+
+"""
+
 import pandas as pd
 from IPython.display import display
 
