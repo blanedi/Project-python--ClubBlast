@@ -261,8 +261,8 @@ def SearchStart():
       path = input("What criteria would you like to search by? Option are club, date, theme, and location ")
 
 
-#searchbydate - Runs search over event dates
 def searchbydate():
+  """User input will run search over club dates and output matching events."""
   pd.set_option('display.max_colwidth', None)
   date = str(input ("What is the date you are looking for? Please enter in YYYY, MM, DD format: "))
   count=df['Dates'].str.contains(date).sum()
@@ -272,8 +272,8 @@ def searchbydate():
     datedf = df[df.Dates.str.contains(date)]
     display(datedf.iloc[:, 1:3])
 
-#searchbyclub - Runs search over club names
 def searchbyclub():
+  """User input will run search over club names and output matching events."""
   pd.set_option('display.max_colwidth', None)
   title = """What is the name of the club you are looking for? Here is a list of clubs, please type in the names as they appear here: \n Work Economy and Social Policy \n Hertie School Hikers \n Hertie School Art Club \n Hertie School Hikers \n Hertie School Art Club \n Hertie Latinoamerica  \n Hertie Sustainability Club \n The Hertie Climbing Group \n Hertie School Security Club \n Hertie Wine Club  \n Hertie Coding Club  \n Kino Club  \n Cinema Politca  \n Centre for Fundamental Rights \n Hertie School City Lab  \n futurEU  \n Hertie Women in Public Policy \n SHIELD \n"""
   club = str(input(title))
@@ -331,8 +331,8 @@ def searchbyclub():
   else:
     print("Invalid entry. Please try again.")
 
-#searchbytheme - Runs search over event theme 
 def searchbytheme():
+  """User input will run search over event theme and output matching events."""
   pd.set_option('display.max_colwidth', None)
   title = "What is the type of event you are looking for? You can choose of the following themes: \n Academic \n Leisure \n Tech \n Other \n"
   theme = str(input(title))
@@ -352,8 +352,8 @@ def searchbytheme():
   else: 
     print("try again")
 
-#searchbylocation - Runs search for events based on whether they are happening on-campus or outside Hertie 
 def searchbylocation():
+    """User input will run search over club location and output matching events."""
     pd.set_option('display.max_colwidth', None)
     title = "Are you looking for events onsite or outside Hertie? \n Type 'onsite' to search for events on campus \n Type 'outside' to search for events off campus \n"
     location = str(input(title))
