@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+"""
+This module contains a list of date-related words to extract from strings for processing and functions to identify dates
+
+Module Exports:
+
+find_dates()
+date_id()
+
+"""
+
+
 from stringops import ascii_swap, word_finder
 import datefinder
 
